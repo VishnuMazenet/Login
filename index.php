@@ -1,23 +1,38 @@
 <?php
+// Initialize the session
 session_start();
-if (!isset($_SESSION["user"])) {
-   header("Location: login.php");
+
+// Check if the user is already logged in, if not then redirect him to login page
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: login.php");
+    exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <title>User Dashboard</title>
+    <title>Welcome</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="jquery-3.6.4.min.js"></script>
+    <style type="text/css">
+        body {
+            font: 14px sans-serif;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Welcome to Dashboard</h1>
-        <a href="logout.php" class="btn btn-warning">Logout</a>
+    <div class="page-header">
+        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
     </div>
+    <p>
+        <a href="reset_password.php" class="btn btn-warning">Reset Your Password</a>
+        <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+    </p>
 </body>
+
 </html>

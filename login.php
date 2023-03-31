@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             header("location: index.php");
                         } else {
                             // Password is incorrect, display a generic error message
-                            $login_err = "Invalid username or password.";
+                            $login_err = "Invalid password.";
                         }
                     }
                 } else {
@@ -91,6 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+    <div class="container">
     <div class="wrapper">
         <h2>Login</h2>
         <p>Please enter your credentials to login.</p>
@@ -119,6 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
             <p><a href="forget_password.php">Forgot Password?</a></p>
         </form>
+    </div>
     </div>
 </body>
 </html>

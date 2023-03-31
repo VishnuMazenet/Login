@@ -70,6 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
+    <div class="container">
     <div class="wrapper">
         <h2>Forgot Password</h2>
         <p>Please enter your email to reset your password.</p>
@@ -85,6 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <p>Remember your password? <a href="login.php">Login here</a>.</p>
         </form>
+    </div>
     </div>
 </body>
 
